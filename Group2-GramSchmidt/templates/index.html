@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gram-Schmidt Calculator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="icon">📘</div>
+      <h1><span class="bold">Gram–Schmidt</span> <span class="highlight">Calculator</span></h1>
+      <p class="subtitle">
+        Orthogonalize a set of vectors in Euclidean space ℝ<sup>n</sup> using the Gram–Schmidt process.
+        Provides an orthonormal basis if inputs are linearly independent.
+      </p>
+    </header>
+
+    <main>
+      <section class="input-section">
+        <h2>Input Vectors</h2>
+        <div class="dimensions">
+          <label>DIMENSIONS</label>
+          <div class="dim-box">
+            <input class="row" type="number" value="1" min="1" />
+            <span>×</span>
+            <input class="column" type="number" value="1" min="1" max="7" />
+          </div>
+          <p>Define <span class="number">n</span> vectors <br> in R<sup class="exponent">n</sup></p>
+        </div>
+
+        <div class="Matrix"></div>
+
+        <button class="compute-btn" id="compute-btn">Compute Basis</button>
+
+        <div class="output" id="output">
+          <math xmlns="https://www.w3.org/1998/Math/MathML/">
+          </math>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <div class="recent">
+          <h3>Recent Calculations</h3>
+          <ul id="history">
+            <li class="NoCalculations">No calculation history yet</li>
+          </ul>
+        </div>
+
+        <div class="info-box">
+          <h4>Did you know?</h4>
+          <p class="Trivia">
+            The Gram–Schmidt process takes a finite, linearly independent set of vectors
+            S = {v₁, v₂, ..., vₖ} and generates an orthogonal set S′ = {u₁, u₂, ..., uₖ}
+            that spans the same k-dimensional subspace of ℝⁿ.
+          </p>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='index.js') }}"></script>       
+</body>
+</html>
